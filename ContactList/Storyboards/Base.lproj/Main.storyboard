@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="146.15384615384616" y="-2.1327014218009479"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="1ud-zV-LJn">
             <objects>
-                <tabBarController id="nYE-mR-4pX" sceneMemberID="viewController">
+                <tabBarController id="nYE-mR-4pX" customClass="TabBarViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZGp-Ee-g7l">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -138,7 +138,7 @@
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="7bk-iQ-7af"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yWP-dP-gMq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

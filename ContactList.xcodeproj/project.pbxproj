@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4A77E62290091640082E7DA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A77E61290091640082E7DA /* TabBarViewController.swift */; };
 		E4BDD5F129002CCA00344AB3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDD5F029002CCA00344AB3 /* Person.swift */; };
 		E4BDD5F729002E9E00344AB3 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDD5F629002E9E00344AB3 /* DataStore.swift */; };
 		E4BDD5FA2900390B00344AB3 /* PersonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDD5F92900390B00344AB3 /* PersonsListViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4A77E61290091640082E7DA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E4BDD5F029002CCA00344AB3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E4BDD5F629002E9E00344AB3 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		E4BDD5F92900390B00344AB3 /* PersonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		E4BDD5F529002D2F00344AB3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4A77E61290091640082E7DA /* TabBarViewController.swift */,
 				E4E6909E290026A90098D0D0 /* InfoViewController.swift */,
 				E4BDD5F92900390B00344AB3 /* PersonsListViewController.swift */,
 				E4BDD5FB2900394500344AB3 /* DetailedPersonsListViewController.swift */,
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A77E62290091640082E7DA /* TabBarViewController.swift in Sources */,
 				E4E6909F290026A90098D0D0 /* InfoViewController.swift in Sources */,
 				E4BDD5FA2900390B00344AB3 /* PersonsListViewController.swift in Sources */,
 				E4BDD5F729002E9E00344AB3 /* DataStore.swift in Sources */,

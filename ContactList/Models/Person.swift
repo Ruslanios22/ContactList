@@ -5,7 +5,7 @@
 //  Created by Руслан Шигапов on 19.10.2022.
 //
 
-struct Person: Equatable {
+struct Person {
     let name: String
     let surname: String
     let phone: String
@@ -17,12 +17,12 @@ struct Person: Equatable {
     
     static func getPersons() -> [Person] {
         var persons: [Person] = []
-        while !DataStore.names.isEmpty {
+        for index in 0..<DataStore.shared.names.count {
             let person = Person(
-                name: DataStore.names.removeFirst(),
-                surname: DataStore.surnames.removeFirst(),
-                phone: DataStore.phones.removeFirst(),
-                email: DataStore.emails.removeFirst()
+                name: DataStore.shared.names[index],
+                surname: DataStore.shared.surnames[index],
+                phone: DataStore.shared.phones[index],
+                email: DataStore.shared.emails[index]
             )
             persons.append(person)
         }

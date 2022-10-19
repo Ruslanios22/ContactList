@@ -8,11 +8,11 @@
 import UIKit
 
 class PersonsListViewController: UITableViewController {
-    var delegate: PersonsListViewControllerDelegate!
-    private let persons = Person.getPersons()
+    var persons: [Person]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
     }
 
     // MARK: - Table view data source
@@ -34,5 +34,11 @@ class PersonsListViewController: UITableViewController {
         let infoVC = segue.destination as? InfoViewController
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         infoVC?.person = persons[indexPath.row]
+    }
+    
+    // MARK: - Private Methods
+    private func setupData() {
+        guard let tabBar = tabBarController as? TabBarViewController else { return }
+        persons = tabBar.persons
     }
 }

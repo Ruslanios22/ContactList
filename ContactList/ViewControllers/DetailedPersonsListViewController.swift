@@ -7,20 +7,21 @@
 
 import UIKit
 
-protocol PersonsListViewControllerDelegate {
-    func copyPersons(from persons: [Person])
-}
-
 class DetailedPersonsListViewController: UITableViewController {
-    var persons: [Person] = []
+    var persons: [Person]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
     }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         persons.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        persons[section].fullName
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,12 +30,23 @@ class DetailedPersonsListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailedPerson", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        
+        if indexPath.row == 0 {
+            content.text = persons[indexPath.section].phone
+            content.image = UIImage(systemName: "phone")
+        } else {
+            content.text = persons[indexPath.section].email
+            content.image = UIImage(systemName: "mail")
+        }
+        
+        cell.contentConfiguration = content
         return cell
     }
-}
-
-extension DetailedPersonsListViewController: PersonsListViewControllerDelegate {
-    func copyPersons(from persons: [Person]) {
-        self.persons = persons
+    
+    // MARK: - Private Methods
+    private func setupData() {
+        guard let tabBar = tabBarController as? TabBarViewController else { return }
+        persons = tabBar.persons
     }
 }
