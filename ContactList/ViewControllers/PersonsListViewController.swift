@@ -8,22 +8,17 @@
 import UIKit
 
 class PersonsListViewController: UITableViewController {
-    var persons: [Person]!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupData()
-    }
+    var persons: [Person] = []
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count
+        persons.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "person", for: indexPath)
-        let person = persons[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath)
         var content = cell.defaultContentConfiguration()
+        let person = persons[indexPath.row]
         content.text = person.fullName
         cell.contentConfiguration = content
         return cell
@@ -31,14 +26,9 @@ class PersonsListViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let infoVC = segue.destination as? InfoViewController
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        infoVC?.person = persons[indexPath.row]
-    }
-    
-    // MARK: - Private Methods
-    private func setupData() {
-        guard let tabBar = tabBarController as? TabBarViewController else { return }
-        persons = tabBar.persons
+        if let indexPath = tableView.indexPathForSelectedRow {
+            guard let infoVC = segue.destination as? InfoViewController else { return }
+            infoVC.person = persons[indexPath.row]
+        }
     }
 }
