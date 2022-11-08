@@ -22,4 +22,6 @@ class DataStore {
         "eeee@gmail.com",
         "ffff@gmail.com"
     ]
+    
+    private init() {}
 }
